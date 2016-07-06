@@ -1,0 +1,27 @@
+{
+  "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+  "@id": "http://api.example.com/doc/",
+  "@type": "ApiDocumentation",
+  "title": "The name of the API",
+  "description": "A short description of the API",
+  "entrypoint": "URL of the API's main entry point",
+  "supportedClass": [
+    {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@id": "http://api.example.com/doc/#Person",
+      "@type": "Class",
+      "title": "The name of the class",
+      "description": "A short description of the class.",
+      "supportedProperty": [
+        {
+          "@type": "SupportedProperty",
+          "property": "#property",
+          "required": true,
+          "readable": false,
+          "writeable": true
+        }
+      ],
+      "possibleStatus": []
+    }
+  ]
+}

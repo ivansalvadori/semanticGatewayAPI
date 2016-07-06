@@ -1,0 +1,8 @@
+{
+  "@context": {
+    "apidoc": "/murdered-brazilians-api/apidoc"
+  },
+  "@id": "/murdered-brazilians-api/entrypoint",
+  "apiDoc:EntryPoint/loadMurderedBrazilians": "/murdered-brazilians-api/people",
+  "apiDoc:EntryPoint/loadMurderedBraziliansByRg": "apiDoc:EntryPoint/loadMurderedBraziliansByRgTemplate"
+}

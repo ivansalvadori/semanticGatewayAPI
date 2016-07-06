@@ -1,0 +1,100 @@
+{
+  "@context": {
+    "domainOntology": "http://myontology.com/onto.owl#",
+    "apiOntology": "/murdered-brazilians-api/onto.owl#",
+    "hydra": "http://www.w3.org/ns/hydra/context.jsonld",
+    "apiDoc": "/murdered-brazilians-api/apidoc/"
+  },
+  "@id": "/murdered-brazilians-api/apidoc",
+  "@type": "ApiDocumentation",
+  "title": "The name of the API",
+  "description": "A short description of the API",
+  "entrypoint": "/murdered-brazilians-api/entrypoint",
+  "supportedClass": [
+    {
+      "@id": "domainOntology:MurderedBrazilian",
+      "@type": "Class",
+      "title": "The name of the class",
+      "description": "A short description of the class.",
+      "supportedProperty": [],
+      "supportedOperation": []
+    },
+    {
+      "@id": "apiDoc:Entrypoint",
+      "@type": "Class",
+      "title": "Entrypoint",
+      "supportedProperty": [
+        {
+          "property": {
+            "@id": "apiDoc:EntryPoint/loadMurderedBrazilians",
+            "@type": "hydra:Link",
+            "label": "Load murdered brazilians",
+            "description": "IRI to register a new user",
+            "domain": "apiDoc:EntryPoint",
+            "range": "domainOntology:MurderedBrazilian",
+            "supportedOperations": [
+              {
+                "@id": "_:loadMurderedBrazilians",
+                "method": "GET",
+                "label": "Load murdered brazilians",
+                "description": null,
+                "expects": null,
+                "returns": "domainOntology:MurderedBrazilian"
+              }
+            ]
+          },
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "apiDoc:EntryPoint/loadMurderedBraziliansByRg",
+            "@type": "hydra:Templatedlink",
+            "label": "Load murdered brazilians",
+            "description": "IRI to register a new user",
+            "domain": "vocab:EntryPoint",
+            "range": {
+              "@id": "apiDoc:EntryPoint/loadMurderedBraziliansByRgTemplate",
+              "@type": "hydra:IriTemplate",
+              "template": "/murdered-brazilians-api/people/{rg}",
+              "variableRepresentation": "BasicRepresentation",
+              "mapping": [
+                {
+                  "@type": "IriTemplateMapping",
+                  "variable": "rg",
+                  "property": "domainOntology:rg",
+                  "required": true
+                }
+              ]
+            },
+            "supportedOperations": [
+              {
+                "@id": "apiDoc:EntryPoint/loadMurderedBraziliansByRg",
+                "method": "GET",
+                "label": "Load murdered brazilians",
+                "description": null,
+                "expects": null,
+                "returns": "domainOntology:MurderedBrazilian"
+              }
+            ]
+          },
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ],
+      "supportedOperations": [
+        {
+          "@id": "_:entry_point",
+          "method": "GET",
+          "label": "The APIs main entry point.",
+          "description": null,
+          "expects": null,
+          "returns": "_:entrypoint",
+          "statusCodes": []
+        }
+      ]
+    }
+  ]
+}
