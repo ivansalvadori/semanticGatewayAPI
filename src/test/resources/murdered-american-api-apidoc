@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "domainOntology": "http://myontology.com/onto.owl#",
+    "apiOntology": "/murdered-americans-api/murderedAmerican.rdf#",
+    "hydra": "http://www.w3.org/ns/hydra/context.jsonld",
+    "apiDoc": "/murdered-americans-api/apidoc/"
+  },
+  "@id": "/murdered-americans-api/apidoc",
+  "@type": "ApiDocumentation",
+  "title": "The name of the API",
+  "description": "A short description of the API",
+  "entrypoint": "/murdered-americans-api/entrypoint",
+  "supportedClass": [
+    {
+      "@id": "domainOntology:MurderedAmerican",
+      "@type": "Class",
+      "title": "The name of the class",
+      "description": "A short description of the class.",
+      "supportedProperty": [],
+      "supportedOperation": []
+    },
+    {
+      "@id": "apiDoc:Entrypoint",
+      "@type": "Class",
+      "title": "Entrypoint",
+      "supportedProperty": [
+        {
+          "@id": "apiDoc:EntryPoint/loadMurderedAmericans",
+          "@type": "hydra:Link",
+          "label": "Load murdered americans",
+          "description": "IRI to register a new user",
+          "domain": "apiDoc:EntryPoint",
+          "range": "domainOntology:MurderedBrazilian",
+          "required": null,
+          "readonly": true,
+          "writeonly": false,
+          "supportedOperations": [
+            {
+              "@id": "_:loadMurderedAmericans",
+              "method": "GET",
+              "label": "Load murdered americans",
+              "description": null,
+              "expects": null,
+              "returns": "domainOntology:MurderedAmerican"
+            }
+          ]
+        }        
+      ],
+      "supportedOperations": [
+        {
+          "@id": "_:entry_point",
+          "method": "GET",
+          "label": "The APIs main entry point.",
+          "description": null,
+          "expects": null,
+          "returns": "_:entrypoint",
+          "statusCodes": []
+        }
+      ]
+    }
+  ]
+}

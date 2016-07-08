@@ -1,11 +1,16 @@
 package br.ufsc.inf.lapesd.semantic.gateway.api.documentation.hydra;
+
+import com.google.gson.annotations.SerializedName;
+
 public class SupportedProperty{
 
-    private String[] id;
+	@SerializedName("@id")
+    private String id;
 
     private String property;
 
-    private PropertyType propertyType;
+    @SerializedName("@type")
+    private String type;
 
     private boolean writeonly = false;
     private boolean readonly = false;
